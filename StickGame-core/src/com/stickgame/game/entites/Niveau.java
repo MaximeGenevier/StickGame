@@ -36,12 +36,14 @@ public class Niveau {
 	private Texture fond2;
 	private TextureRegion textureBlocks;
 	
+	private Personnage personnage1;
+	private Personnage personnage2;
+	private Array<Rectangle> rectCollision = new Array<Rectangle>();
+	
 	public Niveau(){
 		
 		Random rand = new Random();
 		int nombre = rand.nextInt(4) +1;
-		
-		System.out.println(nombre);
 		
 		switch (nombre) {
 		case 1:
@@ -63,10 +65,6 @@ public class Niveau {
 		this.creerNiveau();
 		
 	}
-	
-	private Personnage personnage1;
-	private Personnage personnage2;
-	private Array<Rectangle> rectCollision = new Array<Rectangle>();
 
 	private void creerNiveau(){
 		
@@ -76,7 +74,7 @@ public class Niveau {
 		
 	}
 	
-private void niveau1(){
+	private void niveau1(){
 		
 		this.tiledMap = new TmxMapLoader().load("C:/Users/maxime/Documents/B.T.S/StickGame/android/assets/Monde/plaine.tmx");
 		this.tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
